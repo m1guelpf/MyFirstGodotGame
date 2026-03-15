@@ -26,6 +26,10 @@ Music="*uid://yln75i5bknxa"
 
 gdscript/warnings/untyped_declaration=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
+
 [input]
 
 jump={

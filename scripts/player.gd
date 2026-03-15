@@ -5,6 +5,12 @@ const SPEED: float = 130.0
 const JUMP_VELOCITY: float = -300.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
+
+func ragdoll() -> void:
+	collision.queue_free()
+
 
 func _physics_process(delta: float) -> void:
 	# Gravity
@@ -16,14 +22,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("move_left", "move_right")
-	
+
 	# Sprite Direction
 	if direction > 0:
 		sprite.flip_h = false
 	elif direction < 0:
 		sprite.flip_h = true
 
-	# Sprite Animatio
+	# Sprite Animation
 	if is_on_floor():
 		if direction == 0:
 			sprite.play("idle")
