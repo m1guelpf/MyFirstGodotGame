@@ -6,6 +6,7 @@ const JUMP_VELOCITY: float = -300.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func ragdoll() -> void:
@@ -19,6 +20,7 @@ func _physics_process(delta: float) -> void:
 
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		audio_player.play()
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("move_left", "move_right")

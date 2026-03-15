@@ -53,6 +53,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="KillZone" parent="." unique_id=1736266319 instance=ExtResource("2_md0e3")]
+play_hurt_sound = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1760654662]
 position = Vector2(0.04598427, -7.4935207)
